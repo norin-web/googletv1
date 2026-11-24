@@ -27,7 +27,7 @@ pnpm run build
 GitHub Actions (`.github/workflows/deploy.yml`) builds on every push to `main`.
 
 - Settings → Pages → Source must be **GitHub Actions**.
-- Custom domain: `https://googletvremote.rest/`. It is set in `public/CNAME`, and `base` in `vite.config.ts` is `/`. Change both in the same commit.
+- Custom domain: `https://gogletvremote.site/`. It is set in `public/CNAME`, and `base` in `vite.config.ts` is `/`. Change both in the same commit.
 - If the domain is removed, set `base` back to `/googletv1/` and delete `public/CNAME`, or every asset 404s.
 
 ## Notes
