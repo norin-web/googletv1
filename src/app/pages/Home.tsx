@@ -67,7 +67,7 @@ export default function Home() {
 
       <section className="section feature-row">
         <div className="feature-media">
-          <img src={img("/images/screen-gestures.webp")} alt="Trackpad screen of the app with a finger swiping" loading="lazy" />
+          <img src={img("/images/phone-trackpad.webp")} alt="Remote screen of the app in trackpad mode" width={760} height={1033} loading="lazy" />
         </div>
         <div className="feature-text">
           <TwoTone lines={["Use gestures", "for TV navigation"]} />

@@ -1,8 +1,11 @@
 export const site = {
   brand: "Google TV Remote",
   email: "roosapp@leeuwen.buzz",
+  operator: "Roos Leeuwen",
+  address: "Frederiksplein 1C, 9724 NH Groningen, Netherlands",
+  // sentences 1 and 3 of the owner's Terms of Use, section 8, word for word
   disclaimer:
-    "Google TV Remote is an independent app. Google and Google TV are trademarks of Google LLC. The app is not made by or affiliated with Google LLC.",
+    "The Google TV name and associated licensed brand elements are used in the Application pursuant to a signed trademark licence and brand authorization agreement with Google LLC. Google LLC retains ownership of its trademarks and other intellectual property.",
   copyrightYear: 2026,
 };
 
@@ -75,15 +78,31 @@ export const faq = [
     a: "Tap Connect your TV at the top of the Remote screen and pick your TV from the list. Each TV shows its status: connecting, connected or available.",
   },
   {
+    q: "Why can’t I see my TV?",
+    a: "Make sure your iPhone and TV are on the same Wi-Fi network and that the app has Local Network access in iOS Settings. Without it, the app can’t find or control your TV.",
+  },
+  {
+    q: "Which TVs work with the app?",
+    a: "Compatible Google TV, Android TV and Chromecast-enabled devices. Available features depend on your TV model.",
+  },
+  {
     q: "Can I type on the TV with my phone?",
     a: "Yes. Switch the remote to Keyboard and type on your iPhone; the text appears on the TV.",
+  },
+  {
+    q: "Does the app use my iPhone microphone?",
+    a: "No. The microphone button opens the voice assistant on your TV, such as Google Assistant. You speak to the TV or its physical remote.",
   },
   {
     q: "How do I cast a photo or video?",
     a: "Pick a photo or video to cast. The Cast Media screen shows playback controls: pause and 10-second skip.",
   },
   {
+    q: "Can I cast a video from a website?",
+    a: "Open the site in the app’s browser. If the page has a direct video address, a Cast button appears and your TV plays the video from the original server. Many protected or blob-based streams can’t be cast this way.",
+  },
+  {
     q: "How do I cancel my subscription?",
-    a: "Manage your subscription in your Apple ID settings on iPhone: Settings, your name, then Subscriptions.",
+    a: "Subscriptions renew until you cancel them in your Apple Account: on iPhone open Settings, tap your name, then Subscriptions. Deleting the app does not cancel a subscription.",
   },
 ];

@@ -5,7 +5,7 @@ export default function Support() {
   return (
     <section className="section faq-layout">
       <div className="faq-side">
-        <h1 className="two-tone">Got questions?<br /><span>We’re here to help.</span></h1>
+        <h1>Support</h1>
         <p className="lead">Quick answers about connecting your TV, typing, casting and your subscription.</p>
         <div className="help-card">
           <strong>Can’t find your answer?</strong>
@@ -19,7 +19,6 @@ export default function Support() {
         {faq.map((item, i) => (
           <details key={item.q} open={i === 0}>
             <summary>
-              <span className="faq-num">{String(i + 1).padStart(2, "0")}</span>
               <span className="faq-q">{item.q}</span>
               <span className="faq-icon"><Plus /></span>
             </summary>

@@ -437,13 +437,18 @@ summary:focus-visible {
 }
 
 .feature-media {
+  display: flex;
+  justify-content: center;
+  padding: 56px 40px 0;
   background: var(--surface);
   border-radius: var(--radius-card);
   overflow: hidden;
 }
 
+/* the phone is cut by the card's bottom edge on purpose, like the hero band */
 .feature-media img {
-  width: 100%;
+  display: block;
+  width: min(100%, 380px);
   height: auto;
 }
 
@@ -661,8 +666,8 @@ summary:focus-visible {
   list-style: none;
   cursor: pointer;
   display: grid;
-  grid-template-columns: 40px 1fr 24px;
-  gap: 12px;
+  grid-template-columns: 1fr 24px;
+  gap: 16px;
   align-items: center;
   min-height: 72px;
   padding: 16px 0;
@@ -670,12 +675,6 @@ summary:focus-visible {
 
 .faq-list summary::-webkit-details-marker {
   display: none;
-}
-
-.faq-num {
-  color: var(--muted);
-  font-size: 15px;
-  font-variant-numeric: tabular-nums;
 }
 
 .faq-q {
@@ -694,7 +693,7 @@ summary:focus-visible {
 }
 
 .faq-list details p {
-  padding: 0 36px 22px 52px;
+  padding: 0 40px 22px 0;
   color: var(--muted);
 }
 
@@ -719,13 +718,212 @@ summary:focus-visible {
   word-break: break-all;
 }
 
-.legal h1 {
-  font-size: clamp(36px, 5vw, 52px);
-  margin-bottom: 24px;
+.contact-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: none;
+  margin: 64px 0 0;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
 }
 
-.legal p {
-  margin-bottom: 16px;
+.contact-facts dt {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.contact-facts dd {
+  margin: 0;
+  font-size: 17px;
+}
+
+.contact-facts a {
+  color: var(--accent-on-soft);
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+  .contact-facts {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    margin-top: 48px;
+  }
+}
+
+/* Privacy and Terms: document switch, search over sections, reading progress */
+.legal-progress {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 20;
+  height: 3px;
+  margin-bottom: -3px;
+}
+
+.legal-progress > div {
+  height: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.legal-hero {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+.doc-switch {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 32px;
+  border-radius: 12px;
+  background: var(--white);
+}
+
+.doc-switch a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+}
+
+.doc-switch a:hover {
+  color: var(--ink);
+}
+
+.doc-switch a.active {
+  background: var(--accent-soft);
+  color: var(--accent-on-soft);
+}
+
+.legal-hero h1 {
+  font-size: clamp(42px, 5vw, 64px);
+}
+
+.legal-search {
+  align-self: start;
+}
+
+.legal-search label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.legal-search-field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 0 16px;
+  border-radius: var(--radius-btn);
+  background: var(--white);
+  color: var(--muted);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.legal-search-field:focus-within {
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.legal-search-field input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  font: inherit;
+  font-size: 16px;
+  color: var(--ink);
+}
+
+.legal-search-field input::placeholder {
+  color: var(--muted);
+}
+
+.legal-count {
+  margin-top: 12px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.legal-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 780px) minmax(240px, 340px);
+  justify-content: space-between;
+  gap: 64px;
+  padding-top: 64px;
+  padding-bottom: 96px;
+}
+
+/* the search stays in view next to the text on wide screens */
+.legal-wrap .legal-search {
+  grid-column: 2;
+  grid-row: 1;
+  position: sticky;
+  top: calc(var(--header-h) + 32px);
+}
+
+.legal-wrap .legal-body {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.legal-body {
+  max-width: 780px;
+  display: grid;
+  gap: 40px;
+}
+
+.legal-body a:not(.btn) {
+  color: var(--accent-on-soft);
+  text-underline-offset: 3px;
+}
+
+.legal-body mark {
+  background: var(--accent-soft);
+  color: var(--ink);
+  border-radius: 4px;
+}
+
+.legal-intro {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.legal-sec {
+  display: grid;
+  gap: 16px;
+  scroll-margin-top: calc(var(--header-h) + 32px);
+}
+
+.legal-sec h2 {
+  font-size: clamp(24px, 2.4vw, 28px);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.legal-sec p {
+  color: var(--muted);
+}
+
+.legal-sec strong {
+  color: var(--ink);
+}
+
+.legal-empty {
+  display: grid;
+  justify-items: start;
+  gap: 16px;
   color: var(--muted);
 }
 
@@ -929,7 +1127,7 @@ summary:focus-visible {
   }
 
   .faq-list details p {
-    padding: 0 0 20px 52px;
+    padding: 0 0 20px 0;
   }
 }
 
@@ -938,5 +1136,41 @@ summary:focus-visible {
   *::before,
   *::after {
     transition: none !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .legal-hero {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .doc-switch {
+    margin-bottom: 24px;
+  }
+
+  .legal-wrap {
+    padding-top: 44px;
+  }
+
+  .legal-body {
+    gap: 32px;
+  }
+
+  .legal-intro {
+    font-size: 17px;
+  }
+}
+@media (max-width: 1000px) {
+  .legal-wrap {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .legal-wrap .legal-search,
+  .legal-wrap .legal-body {
+    grid-column: 1;
+    grid-row: auto;
+    position: static;
   }
 }

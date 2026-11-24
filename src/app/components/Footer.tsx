@@ -24,7 +24,7 @@ export default function Footer() {
           <a href={`mailto:${site.email}`}>{site.email}</a>
         </p>
         <p className="footer-meta">{site.disclaimer}</p>
-        <p className="footer-meta">© {site.copyrightYear} {site.brand}</p>
+        <p className="footer-meta">© {site.copyrightYear} {site.operator}, {site.address}</p>
       </div>
     </footer>
   );
