@@ -1,15 +1,16 @@
 import { Link } from "react-router";
 import { app, site } from "../content/site";
+import { img } from "../utils/img";
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-inner">
         <div className="footer-top">
-          <div>
-            <p className="footer-brand">{site.brand}</p>
-            <p className="muted">{site.tagline}</p>
-          </div>
+          <Link to="/" className="brand">
+            <img src={img("/images/app-icon.png")} alt="" width={28} height={28} />
+            <span>{site.brand}</span>
+          </Link>
           <nav className="footer-links" aria-label="Footer">
             <Link to="/app">App</Link>
             <Link to="/support">Support</Link>
@@ -19,11 +20,11 @@ export default function Footer() {
             <a href={app.url} target="_blank" rel="noreferrer">App Store</a>
           </nav>
         </div>
-        <p className="muted small">
-          Email: <a href={`mailto:${site.email}`}>{site.email}</a>
+        <p className="footer-meta">
+          <a href={`mailto:${site.email}`}>{site.email}</a>
         </p>
-        <p className="muted small">{site.disclaimer}</p>
-        <p className="muted small">© {site.copyrightYear} {site.brand}</p>
+        <p className="footer-meta">{site.disclaimer}</p>
+        <p className="footer-meta">© {site.copyrightYear} {site.brand}</p>
       </div>
     </footer>
   );

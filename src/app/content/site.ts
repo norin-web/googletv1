@@ -1,11 +1,6 @@
-// All facts about the brand and the app live here. Pages read only from this file.
-
 export const site = {
   brand: "Google TV Remote",
-  tagline: "Your Google TV, in your pocket",
-  category: "TV remote",
   email: "roosapp@leeuwen.buzz",
-  // Google and Google TV are trademarks of Google LLC. The app is not made by or affiliated with Google.
   disclaimer:
     "Google TV Remote is an independent app. Google and Google TV are trademarks of Google LLC. The app is not made by or affiliated with Google LLC.",
   copyrightYear: 2026,
@@ -16,8 +11,6 @@ export const app = {
   get url() {
     return `https://apps.apple.com/app/id${this.appleId}`;
   },
-  // Flip to true on release: the download buttons become links to the App Store.
-  inStore: false,
 };
 
 export const nav = [
@@ -26,53 +19,68 @@ export const nav = [
   { label: "Contact", to: "/contact" },
 ];
 
-// Tabs as shown in the app design.
-export const tabs = [
-  { name: "Remote", note: "Remote controls, D-pad and trackpad" },
-  { name: "Chromecast", note: "Find your TV and cast media" },
-  { name: "AI Chat" },
-  { name: "Settings" },
-];
+export const hero = {
+  title: "The remote for your Google TV",
+  lead: "Navigate your TV, adjust the volume and control playback from your phone.",
+};
 
-// Input modes of the remote screen.
-export const inputModes = [
-  { name: "D-pad", text: "Move around the TV with directional buttons." },
-  { name: "Trackpad", text: "Swipe on the trackpad to move around the TV screen." },
-  { name: "Keyboard", text: "Type on your iPhone keyboard to enter text on the TV." },
-];
+export const intro = {
+  title: ["Control, type and cast", "to your TV."],
+  text: "Use the familiar remote buttons, a trackpad and your iPhone keyboard. Pair your TV in seconds and enjoy your photos and videos on the big screen.",
+};
 
-// Short feature summary for the home page.
-export const features = [
+export const cards = [
   {
-    title: "Remote with simple controls",
+    title: "Simple controls",
     text: "Back, Home, volume, mute, microphone, power and input on one screen.",
-  },
-  {
-    title: "Pair your TV",
-    text: "Pick your TV from the list of devices to start controlling it.",
+    image: "/images/remote-buttons.webp",
+    alt: "Remote screen with Back, Home, volume, mute, microphone, power and input buttons",
   },
   {
     title: "Type from your phone",
-    text: "Use your iPhone keyboard to enter text on the TV.",
+    text: "Search for shows and enter text on your TV with the keyboard on your phone.",
+    image: "/images/screen-keyboard.webp",
+    alt: "Keyboard screen of the app for typing on the TV",
   },
   {
-    title: "Gestures for TV navigation",
-    text: "Swipe on the trackpad to move around the TV screen.",
+    title: "Clear connection status",
+    text: "See which TV is connected, connecting or available.",
+    devices: true,
   },
 ];
+
+export const inputModes = [
+  { name: "D-pad", text: "Move around the TV with directional buttons.", icon: "dpad" as const, image: "/images/mode-dpad.webp", alt: "D-pad of the app" },
+  { name: "Trackpad", text: "Swipe on the trackpad to move around the TV screen.", icon: "trackpad" as const, image: "/images/mode-trackpad.webp", alt: "Trackpad of the app with a touch point" },
+  { name: "Keyboard", text: "Type on your iPhone keyboard to enter text on the TV.", icon: "keyboard" as const, image: "/images/screen-keyboard.webp", alt: "Keyboard screen of the app for typing on the TV" },
+];
+
+export const pairing = {
+  label: "Pairing",
+  title: ["Pair your TV", "in seconds"],
+  text: "Tap Connect your TV at the top of the remote and pick your TV from the list.",
+  points: ["Your TVs in one list", "Status for each TV", "Change TV from the top of the remote"],
+};
+
+export const casting = {
+  label: "Cast",
+  title: ["Enjoy media", "on big screens"],
+  text: "Enjoy your photos and videos on your TV. Control playback right from your phone.",
+  points: ["Photos and videos", "Pause from your phone", "10-second skip"],
+};
 
 export const faq = [
   {
     q: "How do I connect my TV?",
-    a: "Open the Chromecast tab and pick your TV from the list. Each device shows its status: connecting, connected or available.",
+    a: "Tap Connect your TV at the top of the Remote screen and pick your TV from the list. Each TV shows its status: connecting, connected or available.",
   },
   {
     q: "Can I type on the TV with my phone?",
-    a: "Yes. Switch to Keyboard mode and type on your iPhone; the text appears on the TV.",
+    a: "Yes. Switch the remote to Keyboard and type on your iPhone; the text appears on the TV.",
   },
   {
-    q: "How do I cast a video?",
-    a: "Open the Chromecast tab, pick your TV and start casting. Playback controls, including pause and 10-second skip, appear in the app.",
+    q: "How do I cast a photo or video?",
+    a: "Pick a photo or video to cast. The Cast Media screen shows playback controls: pause and 10-second skip.",
   },
   {
     q: "How do I cancel my subscription?",

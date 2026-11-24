@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router";
 import { app, nav, site } from "../content/site";
 import { img } from "../utils/img";
+import Download from "./Download";
 
 /** Sticky header. Never hides on scroll. */
 export default function Header() {
@@ -26,9 +27,7 @@ export default function Header() {
           <a className="nav-download" href={app.url} target="_blank" rel="noreferrer">Download</a>
         </nav>
 
-        <a className="btn btn-small" href={app.url} target="_blank" rel="noreferrer">
-          Download
-        </a>
+        <Download small />
 
         <button
           className="menu-btn"
