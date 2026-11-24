@@ -500,11 +500,6 @@ button:focus-visible {
   width: auto;
 }
 
-/* The source render is cropped at the wrist; dissolve the cut edge into the panel. */
-.split-media img.fade-bottom {
-  -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
-}
 
 .tabs-list {
   list-style: none;

@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { features, site } from "../content/site";
-import { img } from "../utils/img";
 import RemoteUI from "../components/RemoteUI";
+import TrackpadUI from "../components/TrackpadUI";
 import Download from "../components/Download";
 
 export default function Home() {
@@ -38,7 +38,7 @@ export default function Home() {
 
       <section className="section split">
         <div className="split-media">
-          <img className="fade-bottom" src={img("/images/hand-gesture.png")} alt="A hand swiping on the trackpad of the app" loading="lazy" />
+          <TrackpadUI />
         </div>
         <div>
           <h2>Gestures for TV navigation</h2>
